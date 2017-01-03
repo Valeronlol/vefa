@@ -19,6 +19,9 @@
 	color: #666
 	opacity: 1
 
+html *
+	outline: none
+
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #666
@@ -34,12 +37,73 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.75
-	font-family: $default-font
+	font-family: $base-font-family
 	overflow-x: hidden
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
+
+.header_items
+	text-transform: uppercase
+	color: #ffffff
+	text-align: center
+	margin: 5% 0 0 0
+
+header
+	width: 100%
+	background: 50% 50% no-repeat
+	background-image: url("../img/preview.jpg")
+	background-size: cover
+	height: 600px
+	margin-top: 72px
+	.filter
+		width: 100%
+		height: 100%
+		background: rgba(0,0,0, 0.25)
+		border: 1px solid transparent
+		h2
+			font-size: rem(48)
+			@extend .header_items
+		h1
+			font-size: rem(72)
+			@extend .header_items
+		a
+
+	.nav
+		width: 100%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @import "media" // Всегда в конце
