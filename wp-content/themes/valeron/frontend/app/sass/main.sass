@@ -3,6 +3,7 @@
 @import "libs"
 @import "vars"
 @import "../libs/slick-carousel/slick/slick.scss"
+@import "FontAwesome/font-awesome"
 
 *::-webkit-input-placeholder
 	color: #666
@@ -20,8 +21,8 @@
 	color: #666
 	opacity: 1
 
-html *
-	outline: none
+*
+	outline: none !important
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
@@ -71,13 +72,13 @@ header
 			width: 170px
 			height: 100%
 			background: $c 50% 50% no-repeat
-			background-image: url("../img/logo.png")
+			background-image: url("../img/logo-big.png")
 			background-size: 75%
 			float: left
 		.search
 			width: 90px
 			height: 100%
-			background: #FFAB3E url('../img/loupe.png') 50% 50% no-repeat
+			background: $sc url('../img/loupe.png') 50% 50% no-repeat
 			background-size: 40%
 			float: right
 			cursor: pointer
@@ -98,7 +99,7 @@ header
 				flex-basis: 999px
 				text-align: center
 				&:hover
-					background: #FFAB3E
+					background: $sc
 				&:hover a
 					color: #ffffff
 			a
@@ -127,7 +128,7 @@ header
 			@extend .header_items
 			display: inline-block
 			padding: 7px 40px
-			background: #FFAB3E
+			background: $sc
 			font-weight: bold
 			&:hover
 				background-color: #E59830
@@ -160,11 +161,11 @@ header
 				&:hover span
 					display: inline
 			.cont
-				background: #FFAB3E url("../img/icons/map.png") 50% 50% no-repeat
+				background: $sc url("../img/icons/map.png") 50% 50% no-repeat
 				background-size: 50%
 				top: 0
 			.about
-				background: #FFAB3E url("../img/icons/info.png") 50% 50% no-repeat
+				background: $sc url("../img/icons/info.png") 50% 50% no-repeat
 				background-size: 50%
 				top: 70px
 	.header-slick
@@ -175,7 +176,17 @@ header
 			background: 50% 50% no-repeat
 			background-size: contain
 			height: 55px
-
+			margin: 0 15px
+		&:before
+			content: ''
+			display: block
+			height: 2px
+			background: #fff
+			width: 70%
+			position: absolute
+			left: 15%
+			top: -20px
+			opacity: 0.75
 .slick-arrow
 	position: absolute
 	top: 50%
@@ -199,15 +210,259 @@ header
 	transform: scaleX(-1)
 	margin-top: -27px
 
+.main-page
+	height: 600px
+	overflow: hidden
+	position: relative
+	*:focus, *:active, *:hover
+		text-decoration: none
+	&-filter
+		position: absolute
+		z-index: -1
+		width: 100%
+		height: 245px
+		bottom: 0
+		left: 0
+		right: 0
+		background: #EFEFEF
+	&-item
+		margin-top: 4%
+		height: 435px
+		span
+			display: block
+		a
+			height: 435px
+			width: 100%
+			margin: 0 15px
+			.more
+				font-size: 18px
+				color: $sc
+				text-transform: uppercase
+				height: 100px
+				line-height: 115px
+				position: absolute
+				top: 20%
+				left: 50%
+				transform: translate(-50%)
+				background: url("../img/icons/lupe_orange.png") 50% 0 no-repeat
+				background-size: 40%
+				display: none
+			.img-filter
+				position: relative
+				width: 100%
+				height: 360px
+				background: rgba(0,0,0, 0.01)
+			&:hover .img-filter
+				background: rgba(0,0,0, 0.75)
+			&:hover .more
+				display: block
+			.img
+				background: 50% 50% no-repeat
+				background-size: cover
+				height: 360px
+				width: 100%
+			h2
+				display: block
+				width: 100%
+				color: #ffffff
+				text-transform: uppercase
+				font-size: rem(24)
+				background: $sc
+				margin: 0
+				text-align: center
+				padding: 18px 10px
+				position: relative
+				&:after
+					content: ''
+					display: block
+					height: 1px
+					background: #fff
+					width: 70%
+					position: absolute
+					left: 15%
+					bottom: 1px
+					opacity: 0.75
+			&:hover h2
+				margin-top: -125px
+			.info
+				background: $sc
+				padding: 10px
+				margin: 0
+				height: 125px
+				font-size: 14px
+				color: #ffffff
+				position: relative
+				text-align: center
+			.is_white
+				.info
+					background: #fff
+					color: $c
+				h2
+					background: #fff
+					color: $sc
+					&:after
+						background: $sc
+			&:hover .is_white h2
+				color: $c
 
+	.slick-dots
+		margin-top: 40px
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: center
+	.slick-dots li
+		color: transparent
+		float: left
+		margin: 0 5px
+	.slick-dots button
+		border: 2px solid $sc
+		background: transparent
+		border-radius: 50%
+		width: 3px
+		height: 3px
+		padding: 10px
+	.slick-dots .slick-active button
+		background: $sc
 
+.vefa-is
+	width: 100%
+	height: 450px
+	background: $sc
+	text-align: center
+	position: relative
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		background-repeat: repeat
+		height: 10px
+		background-size: 20px 20px
+		background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px)
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		right: 0
+		background-repeat: repeat
+		height: 15px
+		background-size: 40px 20px
+		background-image: radial-gradient(circle at 10px 15px, white 12px, transparent 13px)
+	h2
+		margin: rem(80) auto rem(25)
+		font-size: rem(36)
+		text-transform: uppercase
+		color: $c
+		span
+			color: #ffffff
+	h4
+		float: left
+		width: 25%
+		color: #ffffff
+		font-size: rem(20)
+		text-transform: uppercase
+		display: block
+		position: relative
+		margin: 120px 0 0 0
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			width: 100px
+			height: 100px
+			top: -110px
+			left: 50%
+			transform: translateX(-50%)
+			background: 50% 50% no-repeat
+			background-size: contain
+		&:nth-child(1):before
+			background-image: url("../img/icons/map.png")
+		&:nth-child(2):before
+			background-image: url("../img/icons/gift.png")
+		&:nth-child(3):before
+			background-image: url("../img/icons/shopping-bag.png")
+		&:nth-child(4):before
+			background-image: url("../img/icons/store.png")
 
+.main-about
+	width: 100%
+	height: 630px
+	background: url("../img/Vefa-main-v3bcgs.jpg") 50% 75% no-repeat
+	background-size: cover
+	position: relative
+	.logo
+		width: 370px
+		height: 115px
+		background: url("../img/logo-big.png") 50% 50% no-repeat
+		background-size: 75%
+	.lines
+		width: 340px
+		height: 55px
+		float: right
+		background: url("../img/icons/lines.png") 50% 50% no-repeat
+		background-size: contain
+	.cont
+		height: 260px
+		margin-top: 190px
+		h2
+			font-size: rem(30)
+			color: $sc
+			text-transform: uppercase
+			font-weight: bold
+		p
+			font-size: 18px
+			color: $c
+			line-height: 1em
+		a
+			display: inline-block
+			padding: 7px 40px
+			background: $sc
+			font-weight: 700
+			text-transform: uppercase
+			color: #fff
+			text-align: center
+			&:hover
+				background: #E59830
+	.backgr
+		position: absolute
+		top: 0
+		left: 30%
+		right: 18%
+		bottom: 20%
+		background: #fff
 
-
-
-
-
-
-
+footer
+	overflow: hidden
+	height: 200px
+	width: 100%
+	background: #16110E
+	> div
+		margin-top: 55px
+	.logo
+		display: block
+		width: 150px
+		height: 60px
+		background: url("../img/logo-big.png") 50% 50% no-repeat
+		background-size: 75%
+	.copy
+		color: #ffffff
+		font-size: 14px
+	h2
+		color: #FFAB3E
+		font-size: 16px
+	p
+		font-size: 16px
+		color: #ffffff
+		margin: 0
+		padding: 0
+	.social
+		.fa
+			margin-right: 5px
+			color: #fff
+			&:hover
+				color: $sc
 
 @import "media" // Всегда в конце
