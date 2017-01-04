@@ -5,23 +5,115 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-	/**/
-
+  header .nav .menu a
+    font-size: rem(16)
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
-
+  .main-about .lines
+    float: none
+    margin: 0 auto
+  .main-about .cont
+    text-align: center
+  footer
+    height: auto
+    .container
+      margin: 5px 0
+  .main-about .cont
+    margin: 0
+  .main-about
+    height: auto
+  .main-about .cont
+    height: auto
+    a
+      margin-bottom: 25px
+  .main-about .backgr
+    left: 10%
+    right: 10%
+  .nav
+    .burger-cont
+      display: block
+    .menu
+      display: none
+      width: auto
+      position: absolute
+      left: 0
+      right: 0
+      top: 70px
+      margin: 0
+      height: auto
+      background-color: $sc
+      li
+        height: 30px
+        margin: 10px auto
+        a
+          line-height: 17px
+          color: #fff
+          padding: 0
+          margin: 0
+        &:hover a
+          color: $c
+          text-decoration: underline
+    .burger_close_btn
+      display: block
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+  header .filter h2
+    font-size: rem(38)
+  .header_items, header .filter a, header .filter h1, header .filter h2
+    margin: 0
+  header .header-slick
+    margin: 10% 20px 0
+  .filter_cont .header-slick
+    width: 80%
+  .vefa-is
+    height: auto
+    margin-bottom: 30px
+    h4
+      width: 50%
+      margin-bottom: 30px
+  .main-about
+    margin-bottom: 30px
+  footer
+    .col-xs-12
+      margin-bottom: 15px
+
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
-
+  .filter_cont .filter h2
+    font-size: rem(38)
+  .filter_cont .filter h1
+    font-size:rem(68)
+  .main-page
+    height: 565px
+  .vefa-is h2
+    margin-top: 4rem
+    font-size: 2.8rem
+  .vefa-is h4
+    width: 100%
+    margin-bottom: 15px
+  .main-about .logo
+    width: auto
+  .main-about .lines
+    width: 80%
+  .main-about .cont h2
+    margin: 0 0 10px 0
+  .main-about .cont
+    height: auto
+  .main-page .container
+    padding: 0
+  .filter_cont .header-slick
+    bottom: 3%
+  .main-page
+    margin-top: 15px
+  .filter_cont .filter .act_buttons a:hover
+    width: 195px
+  .nav .logo
+    width: 120px
+    background-size: 95%
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

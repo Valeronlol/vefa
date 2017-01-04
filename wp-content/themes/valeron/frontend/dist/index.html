@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
 	<meta charset="utf-8">
 	<title>Vefa</title>
@@ -17,23 +16,37 @@
 	<meta name="msapplication-navbutton-color" content="#000">
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 </head>
-
 <body>
-
-	<header>
-		<div class="nav">
-			<a href="/"><span class="logo"></span></a>
-			<ul class="menu">
-				<li><a href="#">магазины</a></li>
-				<li><a href="#">развлечения</a></li>
-				<li><a href="#">магазины</a></li>
-				<li><a href="#">развлечения</a></li>
-				<li><a href="#">магазины</a></li>
-				<li><a href="#">развлечения</a></li>
-				<li><a href="#">развлечения</a></li>
-			</ul>
-			<div class="search"></div>
+	<header class="nav">
+		<a href="/"><span class="logo"></span></a>
+		<ul class="menu">
+			<i class="fa burger_close_btn fa-times" aria-hidden="true"></i>
+			<li><a href="#">магазины</a></li>
+			<li><a href="#">развлечения</a></li>
+			<li><a href="#">магазины</a></li>
+			<li><a href="#">развлечения</a></li>
+			<li><a href="#">магазины</a></li>
+			<li><a href="#">развлечения</a></li>
+			<li><a href="#">развлечения</a></li>
+		</ul>
+		<div class="burger-cont">
+			<div id="burger">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</div>
+		<div class="search">
+			<form id="search-form">
+				<input class="text" type="text" placeholder="Что ищем?">
+				<input hidden type="submit" value="Найти">
+			</form>
+		</div>
+	</header>
+
+	<!--END WORDPRESS HEADER-->
+
+	<div class="filter_cont">
 		<div class="filter">
 			<h2>Добро пожаловать в</h2>
 			<h1>vefa center!</h1>
@@ -54,9 +67,9 @@
 				<div class="header-slick-item" style="background-image:url('img/brand (2).png')"></div>
 			</div>
 		</div>
-	</header>
+	</div>
 
-	<!--END HEADER-->
+
 
 	<div class="main-page">
 		<div class="main-page-filter"></div>
@@ -156,11 +169,13 @@
 		</div>
 	</div>
 
+	<!--WORDPRESS FOOTER-->
+
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-					<div class="logo"></div>
+					<a href="/" class="logo"></a>
 					<p class="copy">(с) Vefa 2016, Все права защищены</p>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">

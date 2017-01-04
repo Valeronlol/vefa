@@ -36,11 +36,12 @@ html, body
 
 body
 	font-size: 16px
-	min-width: 320px
 	position: relative
 	line-height: 1.75
-	font-family: $base-font-family
+	font-family: $font
 	overflow-x: hidden
+	p
+		font-family: $opensans
 
 .img-responsive
 	max-width: 100%
@@ -50,7 +51,6 @@ body
 	text-transform: uppercase
 	color: #ffffff
 	text-align: center
-	margin: 1.5% 0 0 0
 	display: block
 body *
 	transition: .4s ease
@@ -58,60 +58,123 @@ li
 	list-style-type: none
 a:hover
 	text-decoration: none
-header
+
+.nav
+	height: 70px
 	width: 100%
-	background: url("../img/preview.jpg") 50% 50% no-repeat
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	background: #fff
+	z-index: 9
+	.logo
+		display: block
+		width: 170px
+		height: 70px
+		background: $c url("../img/logo-big.png") 50% 50% no-repeat
+		background-size: 75%
+		position: absolute
+		left: 0
+		top: 0
+	.search
+		width: 90px
+		height: 70px
+		background: $sc url('../img/loupe.png') 50% 50% no-repeat
+		background-size: 40%
+		cursor: pointer
+		position: absolute
+		top: 0
+		right: 0
+		#search-form
+			display: none
+	.search.active
+		width: 300px
+		color: #ffffff
+		background-position-x: 93%
+		background-size: 12%
+		#search-form
+			display: block
+		input
+			height: 30px
+			margin: 20px 0 0 35px
+			background: transparent
+			border: 0
+			border-bottom: 2px solid white
+			&::-webkit-input-placeholder
+				color: #ffffff
+			&::-moz-placeholder
+				color: #ffffff
+			&:-ms-input-placeholder
+				color: #ffffff
+	.burger_close_btn
+		display: none
+		position: absolute
+		right: 10px
+		top: 5px
+		cursor: pointer
+		font-size: 1.8em
+		color: $c
+		&:hover
+			color: #fff
+	.burger-cont
+		display: none
+		background-color: $c
+		height: 100%
+		float: left
+		width: 100%
+		#burger
+			height: 100%
+			width: 70px
+			margin: 0 auto
+			cursor: pointer
+			overflow: hidden
+			padding: 10px
+			div
+				height: 4px
+				width: 70%
+				background-color: #fff
+				margin: 10px auto 
+			&:hover div
+				background-color: $sc
+		#burger.active div
+			background-color: $sc
+	.menu
+		padding: 0
+		text-align: center
+		width: calc(100% - 260px)
+		margin: 0 0 0 170px
+		height: 100%
+		overflow: hidden
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-around
+		align-items: stretch
+		align-content: stretch
+		li
+			flex-basis: 999px
+			text-align: center
+			&:hover
+				background: $sc
+			&:hover a
+				color: #ffffff
+		a
+			font-weight: bold
+			font-size: 17px
+			text-transform: uppercase
+			line-height: 70px
+			color: $c
+			padding: 0 5px
+.filter_cont
+	width: 100%
+	background: url("../img/preview.jpg") 50% 100% no-repeat
 	background-size: cover
 	height: 600px
-	.nav
-		height: 70px
-		width: 100%
-		background: #fff
-		.logo
-			display: block
-			width: 170px
-			height: 100%
-			background: $c 50% 50% no-repeat
-			background-image: url("../img/logo-big.png")
-			background-size: 75%
-			float: left
-		.search
-			width: 90px
-			height: 100%
-			background: $sc url('../img/loupe.png') 50% 50% no-repeat
-			background-size: 40%
-			float: right
-			cursor: pointer
-		.menu
-			float: left
-			text-align: center
-			width: calc(100% - 260px)
-			padding: 0
-			margin: 0
-			height: 100%
-			display: flex
-			flex-direction: row
-			flex-wrap: nowrap
-			justify-content: space-around
-			align-items: stretch
-			align-content: stretch
-			li
-				flex-basis: 999px
-				text-align: center
-				&:hover
-					background: $sc
-				&:hover a
-					color: #ffffff
-			a
-				font-weight: bold
-				font-size: 18px
-				text-transform: uppercase
-				line-height: 70px
-				color: $c
-
+	margin-top: 70px
 	.filter
 		width: 100%
-		height: calc(100% - 70px)
+		height: 100%
 		background: rgba(0,0,0, 0.4)
 		overflow: auto
 		text-align: center
@@ -119,12 +182,15 @@ header
 		overflow-x: hidden
 		h2
 			font-size: rem(48)
+			margin: 5% 0 0 0
+			font-weight: normal
 			@extend .header_items
 		h1
 			font-size: rem(78)
-			font-family: $base-font-family-bold
+			margin: 0
+			font-family: $font
 			@extend .header_items
-		a
+		> a
 			@extend .header_items
 			display: inline-block
 			padding: 7px 40px
@@ -141,8 +207,8 @@ header
 				color: $c
 				display: block
 				border-radius: 5px 0 0 5px
-				width: 50px
-				height: 60px
+				width: 60px
+				height: 45px
 				position: absolute
 				right: 0
 				overflow: hidden
@@ -150,9 +216,8 @@ header
 					display: none
 					position: absolute
 					right: 35px
-					top: 25px
+					top: 11px
 					font-size: 16px
-					line-height: 16px
 					color: $c
 				&:hover
 					width: 220px
@@ -170,8 +235,12 @@ header
 				top: 70px
 	.header-slick
 		max-width: 650px
-		margin: 3% auto 0
-		position: relative
+		position: absolute
+		bottom: 5%
+		left: 50%
+		transform: translateX(-50%)
+		//margin: 3% auto 0
+		//position: relative
 		&-item
 			background: 50% 50% no-repeat
 			background-size: contain
@@ -201,7 +270,6 @@ header
 	text-align: center
 	color: transparent
 	text-decoration: none
-	z-index: 99
 	border: 0
 .slick-next
 	right: -7%
@@ -307,6 +375,7 @@ header
 
 	.slick-dots
 		margin-top: 40px
+		padding: 0
 		display: flex
 		flex-direction: row
 		flex-wrap: nowrap
@@ -398,6 +467,7 @@ header
 		height: 115px
 		background: url("../img/logo-big.png") 50% 50% no-repeat
 		background-size: 75%
+		margin: 0 auto
 	.lines
 		width: 340px
 		height: 55px
@@ -429,12 +499,13 @@ header
 	.backgr
 		position: absolute
 		top: 0
-		left: 30%
+		left: 33%
 		right: 18%
 		bottom: 20%
 		background: #fff
 
 footer
+	text-align: center
 	overflow: hidden
 	height: 200px
 	width: 100%
@@ -442,6 +513,7 @@ footer
 	> div
 		margin-top: 55px
 	.logo
+		margin: 0 auto
 		display: block
 		width: 150px
 		height: 60px
