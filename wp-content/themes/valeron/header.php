@@ -1,49 +1,41 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Valeron
- */
-
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-
-<?php wp_head(); ?>
+    <meta charset="utf-8">
+    <title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+    <meta name="keywords" content="<?php echo  get_post(1)->post_content ;?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/frontend/dist/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="<?php bloginfo('template_url'); ?>/frontend/dist/img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_url'); ?>/frontend/dist/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_url'); ?>/frontend/dist/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/frontend/dist/css/main.min.css">
+    <meta name="theme-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <?php wp_head(); ?>
 </head>
+<body>
+<header class="nav">
+    <a href="/"><span class="logo"></span></a>
+	<?php wp_nav_menu( array(
+	        'menu' => 'header_menu'
+    )); ?>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'valeron' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'valeron' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+    <div class="burger-cont">
+        <div id="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="search">
+        <form id="search-form">
+            <input class="text" type="text" placeholder="Что ищем?">
+            <input hidden type="submit" value="Найти">
+        </form>
+    </div>
+</header>

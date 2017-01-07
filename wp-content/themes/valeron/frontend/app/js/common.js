@@ -88,6 +88,7 @@ $(function() {
     /**
      * burger close btn
      */
+    $("header .menu").append('<i class="fa burger_close_btn fa-times" aria-hidden="true"></i>');
     $('.burger_close_btn').on('click', function () {
         $('#burger').removeClass('active');
         $('.nav .menu').css('display', '');
