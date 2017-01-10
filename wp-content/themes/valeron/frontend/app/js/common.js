@@ -64,6 +64,19 @@ $(function() {
     });
 
     /**
+     * post background slider
+     */
+    $('#post-main .post-slider').slick({
+        arrow: false,
+        infinite: true,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000
+    });
+
+    /**
      * Search button handler
      */
     $('header .search').on('click', function () {
@@ -93,4 +106,29 @@ $(function() {
         $('#burger').removeClass('active');
         $('.nav .menu').css('display', '');
     });
+
+    /**
+     * Flex menu
+     */
+    $('#flex-menu').flexMenu();
+    
+    $('#shop-more').on('click', function () {
+        console.log('asd')
+    });
+
+    /**
+     * post page cont responsive
+     */
+    function postPageCont() {
+        var post_cont = $('#post_page_content');
+        if (window.innerWidth <= 768) {
+            post_cont.detach();
+            $('#post-main').after(post_cont);
+        }else{
+            $('#post-main .row.cont').prepend(post_cont);
+        }
+    }
+    postPageCont();
+    window.onresize = function() { postPageCont(); };
+
 });

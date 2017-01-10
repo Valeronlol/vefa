@@ -42,6 +42,7 @@ body
 	overflow-x: hidden
 	p
 		font-family: $opensans
+		line-height: 18px
 
 .img-responsive
 	max-width: 100%
@@ -91,7 +92,7 @@ a:hover
 	.search.active
 		width: 300px
 		color: #ffffff
-		background-position-x: 93%
+		background-position-x: 91%
 		background-size: 12%
 		#search-form
 			display: block
@@ -535,5 +536,209 @@ footer
 			color: #fff
 			&:hover
 				color: $sc
+
+.page-preview
+	width: 100%
+	margin-top: 70px
+	height: 120px
+	background: 50% 50% no-repeat
+	background-size: cover
+	h1
+		color: #ffffff
+		font-size: 40px
+		padding-left: 10%
+
+.flex-nav
+	width: 100%
+	height: 60px
+	background: #EFEFEF
+	#flex-menu
+		position: relative
+		li
+			float: left
+			padding: 7px 10px
+			text-align: center
+			a
+				text-transform: uppercase
+				font-size: 16px
+				font-weight: normal
+				color: $c
+				&:hover
+					color: $scc
+					font-weight: bold
+		.fa-circle
+			color: $c
+			font-size: 8px
+			margin: 0 3px 5px
+		.active .fa-circle
+			color: $scc
+		.flexMenu-viewMore
+			margin: 0
+			a
+				height: 25px
+				display: block
+				.fa-circle
+					margin: 10px 3px 0
+					display: block
+					float: left
+			&:hover .fa-circle
+				color: $sc
+			.flexMenu-popup
+				padding: 0
+				right: 0
+				top: 44px
+				background-color: $sc
+				z-index: 5
+				li
+					display: inline-block
+					float: left
+					a
+						color: #fff
+						&:hover
+							color: $c
+							font-weight: bold
+.shop-page-content
+	margin: 25px 0
+	.img
+		width: 100%
+		height: 225px
+		background: 50% 50% no-repeat
+		background-size: cover
+	h2
+		margin: 0
+		height: 60px
+		line-height: 60px
+		text-align: center
+		background-color: $sc
+		color: #ffffff
+		text-transform: uppercase
+		font-size: rem(24)
+		&:hover
+			background-color: $scc
+			color: $c
+	.cont
+		margin: 25px 0
+.shop-more
+	text-align: center
+#shop-more
+	display: inline-block
+	cursor: pointer
+	margin-bottom: 35px
+	padding: 10px 45px
+	background-color: $sc
+	text-transform: uppercase
+	font-size: 16px
+	font-weight: bold
+	color: #ffffff
+	&:hover
+		background-color: $scc
+		color: $c
+	&::selection
+		background: transparent
+#post-main
+	width: 100%
+	margin-top: 70px
+	height: 600px
+	position: relative
+	.post-slider
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		.item
+			width: 100%
+			height: 600px
+			background: 50% 50% no-repeat
+			background-size: cover
+	.cont
+		position: relative
+		height: 600px
+	.slick-dots
+		position: absolute
+		margin: 0
+		right: 50%
+		bottom: 0
+		height: 50px
+		background: $sc
+		padding: 0 25px
+		z-index: 5
+		li
+			float: left
+			button
+				font-size: 0
+				display: block
+				width: 20px
+				height: 20px
+				border-radius: 50%
+				border: 3px solid #fff
+				margin: 15px 5px 0
+				background: transparent
+		li.slick-active button
+			background: #fff
+.post-content
+	position: absolute
+	background: #FFFFFF
+	width: 50%
+	height: 480px
+	right: 0
+	bottom: 0
+	overflow: hidden
+	> *
+		padding: 0 30px
+	h1
+		font-family: $font-bold
+		text-transform: uppercase
+		font-size: rem(30)
+		display: block
+		text-align: left
+		background: $sc
+		color: #ffffff
+		width: 75%
+		height: 60px
+		line-height: 60px
+	h2
+		font-size: 16px
+	p
+		font-size: 14px
+.more-posts, .cafe, .services, .entertainment
+	margin: 25px 0
+	.img
+		width: 100%
+		height: 225px
+		background: 50% 50% no-repeat
+		background-size: cover
+	h2
+		margin: 0
+		height: 60px
+		line-height: 60px
+		text-align: center
+		background-color: $sc
+		color: #ffffff
+		text-transform: uppercase
+		font-size: rem(24)
+		&:hover
+			background-color: $scc
+			color: $c
+	h1
+		text-align: center
+		font-size: rem(22)
+		color: $sc
+		text-transform: uppercase
+		margin: 30px
+	.cont
+		margin: 15px 0
+.cafe, .services
+	.row
+		h2
+			background-color: $c
+			color: $sc
+			&:hover
+				color: #ffffff
+.entertainment
+	.row
+		.img
+			height: 390px
+.floors
 
 @import "media" // Всегда в конце

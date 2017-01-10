@@ -10,6 +10,7 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
+
   .main-about .lines
     float: none
     margin: 0 auto
@@ -59,6 +60,8 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+  .flex-nav #flex-menu .flexMenu-viewMore .flexMenu-popup
+    margin: 0 15px
   header .filter h2
     font-size: rem(38)
   .header_items, header .filter a, header .filter h1, header .filter h2
@@ -78,8 +81,14 @@
   footer
     .col-xs-12
       margin-bottom: 15px
-
-
+  #post-main .slick-dots
+    transform: translate(50%)
+  .post-content
+    position: static
+    width: 100%
+    height: auto
+  .more-posts
+    margin: 0
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -114,10 +123,14 @@
   .nav .logo
     width: 120px
     background-size: 95%
+  #post-main .slick-dots
+    padding: 0
+    overflow: hidden
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-	/**/
+  .post-content h1
+    width: 100%
 
 
 /*==========  Mobile First  ==========*/
