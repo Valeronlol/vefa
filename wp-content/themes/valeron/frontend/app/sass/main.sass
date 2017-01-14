@@ -43,6 +43,7 @@ body
 	p
 		font-family: $opensans
 		line-height: 18px
+		color: $c
 
 .img-responsive
 	max-width: 100%
@@ -740,5 +741,44 @@ footer
 		.img
 			height: 390px
 .floors
+	height: 770px
+	width: 100%
+	margin-top: 35px
+	margin-bottom: 35px
+	.text
+		.but_cont
+			margin-top: 40px
+			span
+				display: block
+				height: 65px
+				width: 100%
+				background: #E3E3E3
+				cursor: pointer
+				text-align: center
+				font-size: 22px
+				line-height: 65px
+				margin-top: 2px
+				&:hover
+					background: $sc
+		p
+			font-size: 16px
+		h2
+			color: $sc
+			font-weight: bold
+			font-size: 30px
+			text-align: left
+			margin-bottom: 10px
+	&-cont
+		display: none
+		&:first-child
+			display: block
+	&-button.active
+		background: $sc !important
+		color: #fff
+
+#g1
+	.cls-2:hover
+		fill: darkslateblue
+
 
 @import "media" // Всегда в конце

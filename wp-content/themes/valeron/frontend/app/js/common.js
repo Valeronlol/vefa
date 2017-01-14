@@ -131,4 +131,15 @@ $(function() {
     postPageCont();
     window.onresize = function() { postPageCont(); };
 
+    /**
+     * floors button handler
+     */
+    var floorButton = $('.floors-button');
+    floorButton.on('click', function () {
+        $('.floors-cont').css({display: 'none'});
+        floorButton.removeClass('active');
+        $(this).addClass('active');
+        $('#' + $(this).attr("data-href")).show(200);
+    });
+
 });

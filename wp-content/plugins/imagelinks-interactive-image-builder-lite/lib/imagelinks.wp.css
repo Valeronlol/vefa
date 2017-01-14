@@ -1,0 +1,25 @@
+/*!
+  ImageLinks - jQuery Interactive Image
+  @name imagelinks.wp.css
+  @description jQuery plugin for creating an interactive image for news, posters, albums and etc
+  @version 1.4.0
+  @author Max Lawrence 
+  @site http://www.avirtum.com
+  @copyright (c) 2016 Max Lawrence (http://www.avirtum.com)
+*/
+.imgl .imgl-btn-info {
+	display:block;
+	position:absolute;
+	margin:0;
+	bottom:5px;
+	right:5px;
+	width:16px;
+	height:16px;
+	border-radius:50%;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASlJREFUeNqkk7FOhFAQRXkslUsoNBpKGmK9HRT+gZ9A4s8Qa37BQGFFZU0L1obCUEBjoBALFAvW7DoXB6ObZ9wNN7nNmznD5TEI5bc08jHZZBt83pEb9gv5YwLED/iIfO553pXjOJeu657Ytr1EoSiKPk3TNsuyuyiKbujokfyu7MAXvu+nZVm+bf8QauhBLzPfsVco9H2/3v4j9PCQFbPKGcUOZE+m2mhZEjBgVVwW3tmyrKWyp9ALBiwimLgwWeNXCLmYMZHAmG57V0KI0TIxY6jKTGFAh+98KMhMhwENluTQAcw04wBsWFVVe6dALxhe7fmLNGuVFzxgTX5OkuS+bdtNXdenmqapuq4vhmHY5Hn+GsfxUxiGt0EQXFPvw/Qzibm/86cAAwD5TS/sDFpbrwAAAABJRU5ErkJggg==);
+	opacity:0.4;
+	text-decoration:none;
+}
+.imgl .imgl-btn-info:hover {
+	opacity:1;
+}
