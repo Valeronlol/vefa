@@ -3,6 +3,8 @@
 @import "libs"
 @import "vars"
 @import "../libs/slick-carousel/slick/slick.scss"
+@import "../libs/tooltipster/tooltipster.bundle.min.css"
+@import "../libs/tooltipster/themes/tooltipster-sideTip-borderless.min.css"
 @import "FontAwesome/font-awesome"
 
 *::-webkit-input-placeholder
@@ -741,27 +743,32 @@ footer
 		.img
 			height: 390px
 .floors
-	height: 770px
 	width: 100%
 	margin-top: 35px
 	margin-bottom: 35px
-	.text
+	.text_cont
+		position: relative
+	#text
+		position: absolute
+		top: 0
+		right: 0
 		.but_cont
-			margin-top: 40px
+			margin-top: 20px
 			span
 				display: block
-				height: 65px
+				height: 50px
 				width: 100%
 				background: #E3E3E3
 				cursor: pointer
 				text-align: center
 				font-size: 22px
-				line-height: 65px
+				line-height: 50px
 				margin-top: 2px
 				&:hover
 					background: $sc
 		p
 			font-size: 16px
+			margin: 7px 0
 		h2
 			color: $sc
 			font-weight: bold
@@ -775,10 +782,22 @@ footer
 	&-button.active
 		background: $sc !important
 		color: #fff
+	.floor_map
+		width: 100%
+		height: 3185px
+		background: 50% 50% no-repeat
+		background-size: contain
+	.info_cont
+		display: none
+	.info_cont.active
+		display: block
 
-#g1
-	.cls-2:hover
-		fill: darkslateblue
+area[title]:hover:after
+	font-style: italic
+	color: red
+
+#hotspot-4 .hotspots-placeholder
+	display: none
 
 
 @import "media" // Всегда в конце

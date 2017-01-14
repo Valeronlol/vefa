@@ -134,12 +134,64 @@ $(function() {
     /**
      * floors button handler
      */
-    var floorButton = $('.floors-button');
-    floorButton.on('click', function () {
+    var floorButtons = $('.floors-button');
+    floorButtons.on('click', function () {
         $('.floors-cont').css({display: 'none'});
-        floorButton.removeClass('active');
+        floorButtons.removeClass('active');
         $(this).addClass('active');
-        $('#' + $(this).attr("data-href")).show(200);
+
+        var href = $(this).attr("data-href");
+        floorLift(href);
+        changeLiftInfo(href);
     });
 
+    /**
+     * Changing info about current floor on lift panel
+     *
+     * @param href string // data-href attr
+     */
+    function changeLiftInfo(href) {
+        $('.floors .info_cont').removeClass('active');
+        $('.floors .info_cont[data-href="' + href +'"]').addClass('active');
+    }
+    /**
+     * left handler
+     *
+     * @param floor string
+     */
+    function floorLift(floor) {
+        var difference = 158;
+        var destination = $('#floor_map').height()/4;
+        switch(floor)
+        {
+            case 'f1':
+                $('body, html').animate( { scrollTop: difference }, 1000 );
+                break;
+            case 'f2':
+                $('body, html').animate( { scrollTop: destination + difference }, 1000 );
+                break;
+            case 'f3':
+                $('body, html').animate( { scrollTop: (destination * 2) + difference }, 1000 );
+                break;
+            case 'g1':
+                $('body, html').animate( { scrollTop: (destination * 3) + difference }, 1000 );
+                break;
+        }
+    }
+
+    /**
+     * left autoscroller
+     */
+    $(window).on( 'scroll', function(){
+        var scrollres = $(window).scrollTop() -180;
+        if (scrollres < 0) scrollres = 0;
+        $('#text').stop().animate({'top': scrollres}, 200);
+    });
+
+    /**
+     * Tooltipster area
+     */
+    $('area').tooltipster({
+        theme: 'tooltipster-borderless'
+    });
 });
