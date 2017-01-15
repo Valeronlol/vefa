@@ -397,7 +397,7 @@ a:hover
 	.slick-dots .slick-active button
 		background: $sc
 
-.vefa-is
+.vefa-is, .page-vefa-is
 	width: 100%
 	height: 450px
 	background: $sc
@@ -459,7 +459,12 @@ a:hover
 		&:nth-child(4):before
 			background-image: url("../img/icons/store.png")
 
-.main-about
+.page-vefa-is
+	&:before
+		background-image: radial-gradient(circle at 10px -5px, transparent 12px, $c 13px)
+	&:after
+		background-image: radial-gradient(circle at 10px 15px, $c 12px, transparent 13px)
+.main-about, .page-about
 	width: 100%
 	height: 630px
 	background: url("../img/Vefa-main-v3bcgs.jpg") 50% 75% no-repeat
@@ -507,6 +512,20 @@ a:hover
 		bottom: 20%
 		background: #fff
 
+.page-about
+	height: auto
+	overflow: hidden
+	margin-bottom: 35px
+	.backgr
+		left: 10%
+		right: 40%
+		bottom: 0
+	.cont
+		margin-top: 0
+		height: auto
+		overflow: hidden
+	.logo_cont
+		margin-top: 12%
 footer
 	text-align: center
 	overflow: hidden
@@ -798,6 +817,65 @@ area[title]:hover:after
 
 #hotspot-4 .hotspots-placeholder
 	display: none
-
-
+.apart, .ofices
+	width: 100%
+	margin: 35px 0
+	overflow: hidden
+	.cont
+		height: 510px
+	h2
+		text-transform: uppercase
+		text-align: center
+		color: $sc
+		font-size: 24px
+		display: block
+		height: 55px
+		line-height: 55px
+		background: $c
+		margin: 0
+		&:hover
+			color: #fff
+	a
+		&:hover, &:active, &:focus
+			text-decoration: none
+	&-img
+		height: 455px
+		width: 100%
+		background: 50% 50% no-repeat
+		background-size: cover
+	.cont
+		padding: 1px
+	.info
+		background: $sc
+		padding: 25px
+		h2
+			color: $c
+			background: transparent
+			text-align: left
+			display: inline
+			line-height: 15px
+			font-weight: bold
+.contact
+	width: 100%
+	min-height: 575px
+	position: relative
+	#map
+		width: 100%
+		height: 575px
+	.map_info
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 455px
+		height: 315px
+		background: $sc
+		padding: 60px
+		h1
+			font-size: 28px
+			font-weight: bold
+			text-transform: uppercase
+			color: #16110E
+		p
+			font-size: 18px
 @import "media" // Всегда в конце

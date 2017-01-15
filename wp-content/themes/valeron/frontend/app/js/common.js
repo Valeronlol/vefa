@@ -129,69 +129,201 @@ $(function() {
         }
     }
     postPageCont();
-    window.onresize = function() { postPageCont(); };
+    window.onresize = function() {postPageCont();};
 
-    /**
-     * floors button handler
-     */
-    var floorButtons = $('.floors-button');
-    floorButtons.on('click', function () {
-        $('.floors-cont').css({display: 'none'});
-        floorButtons.removeClass('active');
-        $(this).addClass('active');
+    if ( window.innerWidth > 992 ) {
+        /**
+         * floors button handler
+         */
+        var floorButtons = $('.floors-button');
+        floorButtons.on('click', function () {
+            $('.floors-cont').css({display: 'none'});
+            floorButtons.removeClass('active');
+            $(this).addClass('active');
 
-        var href = $(this).attr("data-href");
-        floorLift(href);
-        changeLiftInfo(href);
-    });
+            var href = $(this).attr("data-href");
+            floorLift(href);
+            changeLiftInfo(href);
+        });
 
-    /**
-     * Changing info about current floor on lift panel
-     *
-     * @param href string // data-href attr
-     */
-    function changeLiftInfo(href) {
-        $('.floors .info_cont').removeClass('active');
-        $('.floors .info_cont[data-href="' + href +'"]').addClass('active');
-    }
-    /**
-     * left handler
-     *
-     * @param floor string
-     */
-    function floorLift(floor) {
-        var difference = 158;
-        var destination = $('#floor_map').height()/4;
-        switch(floor)
-        {
-            case 'f1':
-                $('body, html').animate( { scrollTop: difference }, 1000 );
-                break;
-            case 'f2':
-                $('body, html').animate( { scrollTop: destination + difference }, 1000 );
-                break;
-            case 'f3':
-                $('body, html').animate( { scrollTop: (destination * 2) + difference }, 1000 );
-                break;
-            case 'g1':
-                $('body, html').animate( { scrollTop: (destination * 3) + difference }, 1000 );
-                break;
+        /**
+         * Changing info about current floor on lift panel
+         *
+         * @param href string // data-href attr
+         */
+        function changeLiftInfo(href) {
+            $('.floors .info_cont').removeClass('active');
+            $('.floors .info_cont[data-href="' + href +'"]').addClass('active');
         }
-    }
+        /**
+         * left handler
+         *
+         * @param floor string
+         */
+        function floorLift(floor) {
+            var difference = 158;
+            var destination = $('#floor_map').height()/4;
+            switch(floor)
+            {
+                case 'f1':
+                    $('body, html').animate( { scrollTop: difference }, 1000 );
+                    break;
+                case 'f2':
+                    $('body, html').animate( { scrollTop: destination + difference }, 1000 );
+                    break;
+                case 'f3':
+                    $('body, html').animate( { scrollTop: (destination * 2) + difference }, 1000 );
+                    break;
+                case 'g1':
+                    $('body, html').animate( { scrollTop: (destination * 3) + difference }, 1000 );
+                    break;
+            }
+        }
 
-    /**
-     * left autoscroller
-     */
-    $(window).on( 'scroll', function(){
-        var scrollres = $(window).scrollTop() -180;
-        if (scrollres < 0) scrollres = 0;
-        $('#text').stop().animate({'top': scrollres}, 200);
-    });
+        /**
+         * left autoscroller
+         */
+        $(window).on( 'scroll', function(){
+            var scrollres = $(window).scrollTop() -180;
+            if (scrollres < 0) scrollres = 0;
+            $('#text').stop().animate({'top': scrollres}, 200);
+        });
+    }
 
     /**
      * Tooltipster area
      */
-    $('area').tooltipster({
+    $('#test').tooltipster({
         theme: 'tooltipster-borderless'
     });
 });
+
+/**
+ * Google maps API
+ */
+function initMap() {
+    var customMapType = new google.maps.StyledMapType([
+        {
+            "featureType": "administrative",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#444444"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "color": "#f2f2f2"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "saturation": -100
+                },
+                {
+                    "lightness": 45
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "simplified"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "labels.icon",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "color": "#46bcec"
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#f3f3f3"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [
+                {
+                    "saturation": "0"
+                },
+                {
+                    "color": "#f3f3f3"
+                }
+            ]
+        }
+    ], {
+        name: 'Map'
+    });
+    var customMapTypeId = 'custom_style';
+    var myLatLng = { lat: 42.857208, lng: 74.609635 }; // Координаты .
+    var image = '../wp-content/themes/valeron/frontend/dist/img/icon_map.png'; // Marker Icon
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        scrollwheel: false,
+        center: myLatLng,
+        mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+        }
+    });
+
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image
+    });
+
+    map.mapTypes.set(customMapTypeId, customMapType);
+    map.setMapTypeId(customMapTypeId);
+}
+
