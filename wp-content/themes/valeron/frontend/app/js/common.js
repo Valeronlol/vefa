@@ -193,7 +193,7 @@ $(function() {
     /**
      * Tooltipster area
      */
-    $('#test').tooltipster({
+    $('area').tooltipster({
         theme: 'tooltipster-borderless'
     });
 });
