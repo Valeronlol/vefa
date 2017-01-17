@@ -1,6 +1,6 @@
 <?php
 /**
- * Shop page
+ * Entertament page
  */
 $thumb = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : '../wp-content/themes/valeron/frontend/dist/img/default_page_preview.jpg';
 $posts = get_posts(array(

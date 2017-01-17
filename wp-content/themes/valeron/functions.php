@@ -12,13 +12,12 @@ remove_filter('comment_text', 'capital_P_dangit',31);
 remove_filter('the_content', 'wptexturize');
 remove_filter('the_excerpt', 'wptexturize');
 remove_filter('comment_text', 'wptexturize');
-function override_mce_options($initArray) {
+add_filter('tiny_mce_before_init', function($initArray) {
 	$opts = '*[*]';
 	$initArray['valid_elements'] = $opts;
 	$initArray['extended_valid_elements'] = $opts;
 	return $initArray;
-}
-add_filter('tiny_mce_before_init', 'override_mce_options');
+});
 add_theme_support( 'post-thumbnails' );
 show_admin_bar(false); // Show admin menu bar true/false
 
