@@ -21,7 +21,7 @@ add_shortcode('home_slider', function() {
 	{
 		$html .= "
 			<a href='{$arr['href']}'>
-				<span class='img' style='background-image: url({$arr['image']['sizes']['large']})'>
+				<span class='img' style='background-image: url({$arr['image']})'>
 					<span class='img-filter'>
 						<span class='more'>подробнее</span>
 					</span>
