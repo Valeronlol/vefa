@@ -26,7 +26,7 @@ add_shortcode('home_slider', function() {
 						<span class='more'>подробнее</span>
 					</span>
 				</span>
-				<span class='cont'>
+				<span class='cont {$arr['is_white']}'>
 					<h2>{$arr['title']}</h2>
 					<h4 class='info'>{$arr['text']}</h4>
 				</span>
