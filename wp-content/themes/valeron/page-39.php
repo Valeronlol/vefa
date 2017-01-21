@@ -6,13 +6,14 @@ $thumb = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : '../wp-co
 $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 $the_query = new WP_Query( array(
 	    'post_type' => 'post',
-	    'posts_per_page' => 0,
+	    'posts_per_page' => 12,
         'cat' => 7,
         'numberposts' => 0,
         'orderby' => 'rand',
         'order'    => 'ASC',
 	    'paged' => $paged
 ));
+$categories = get_categories( array('child_of' => 7) );
 ?>
 <?php get_header();?>
 
@@ -27,10 +28,11 @@ $the_query = new WP_Query( array(
     <div class="flex-nav">
         <div class="container">
             <div class="row">
-	            <?php wp_nav_menu( array(
-		            'menu' => 'shop_menu',
-		            'menu_id' => 'flex-menu'
-	            )); ?>
+                <ul id="flex-menu">
+                    <?php foreach ($categories as $category) :?>
+                        <li><a href="<?php echo get_category_link($category) ;?>"><?php echo $category->cat_name ;?></a></li>
+                    <?php endforeach ;?>
+                </ul>
             </div>
         </div>
     </div>
@@ -40,7 +42,6 @@ $the_query = new WP_Query( array(
             <div class="row">
                 <?php while ($the_query-> have_posts()) : $the_query->the_post(); ?>
                     <?php
-                        global $post;
                         $thumbnail = get_the_post_thumbnail_url($post->ID);
                         if ( !$thumbnail ) $thumbnail = '../wp-content/themes/valeron/frontend/dist/img/default_page_item.jpg';
                     ?>
