@@ -21,13 +21,6 @@ add_filter('tiny_mce_before_init', function($initArray) {
 add_theme_support( 'post-thumbnails' );
 show_admin_bar(false); // Show admin menu bar true/false
 
-function the_content_filter($content) {
-	$block = join("|",array("one_third", "team_member"));
-	$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
-	$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
-	return $rep;
-}
-add_filter("the_content", "the_content_filter");
 /**
  * theme shortcodes in here!
  */
