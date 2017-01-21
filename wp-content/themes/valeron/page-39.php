@@ -29,6 +29,7 @@ $categories = get_categories( array('child_of' => 7) );
         <div class="container">
             <div class="row">
                 <ul id="flex-menu">
+                    <li><a href="<?php echo get_permalink(39) ;?>">Все бутики</a></li>
                     <?php foreach ($categories as $category) :?>
                         <li><a href="<?php echo get_category_link($category) ;?>"><?php echo $category->cat_name ;?></a></li>
                     <?php endforeach ;?>
