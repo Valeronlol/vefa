@@ -86,7 +86,7 @@ if ( !class_exists( 'DrawAttention_Admin' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'disable_third_party_js' ), 9999999 );
 
 			add_action( 'cmb2_save_post_fields', array( $this, 'save_hotspots_json' ), 10, 4 );
-			add_action( 'current_screen', array( $this, 'load_from_hotspots_json' ) );
+//			add_action( 'current_screen', array( $this, 'load_from_hotspots_json' ) );
 
 			// Add the options page and menu item.
 			// add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
@@ -349,7 +349,7 @@ if ( !class_exists( 'DrawAttention_Admin' ) ) {
 		public function load_from_hotspots_json() {
 			$screen = get_current_screen();
 
-			if ( $screen->post_type!=='da_image' || $_GET['action'] !== 'edit' ) {
+			if ( $screen->post_type !== 'da_image' || $_GET['action'] !== 'edit' ) {
 				return;
 			}
 
