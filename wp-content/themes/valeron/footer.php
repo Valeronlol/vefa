@@ -19,8 +19,8 @@
                 <h2>Мы в социальных сетях:</h2>
                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+<!--                <a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a>-->
+<!--                <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>-->
             </div>
         </div>
     </div>
