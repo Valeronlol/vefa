@@ -92,11 +92,13 @@ a:hover
 		right: 0
 		#search-form
 			display: none
+			height: 100%
 	.search.active
 		width: 300px
 		color: #ffffff
 		background-position-x: 91%
 		background-size: 12%
+		cursor: auto
 		#search-form
 			display: block
 		input
@@ -111,6 +113,13 @@ a:hover
 				color: #ffffff
 			&:-ms-input-placeholder
 				color: #ffffff
+		.submit
+			height: 100%
+			margin: 0
+			width: 75px
+			position: absolute
+			right: 0
+			border: 0
 	.burger_close_btn
 		display: none
 		position: absolute
@@ -1031,4 +1040,20 @@ area[title]:hover:after
 .modal-wrap.active
 	display: block
 	z-index: 99
+.search-result
+	li
+		display: inline-block
+		&:hover
+			background: $sc
+		&:hover a
+			color: #ffffff
+		a
+			font-weight: bold
+			font-size: 17px
+			text-transform: uppercase
+			line-height: 70px
+			color: $c
+			padding: 0 5px
+
+
 @import "media" // Всегда в конце

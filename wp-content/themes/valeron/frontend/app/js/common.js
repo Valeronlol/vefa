@@ -85,6 +85,14 @@ $(function() {
     });
 
     /**
+     * form handler
+     */
+    $('#search-form').on('click', function (e) {
+        e.stopPropagation();
+        console.log(11)
+    });
+
+    /**
      * burger button handler
      */
     $('#burger').on('click', function () {

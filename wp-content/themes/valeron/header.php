@@ -32,10 +32,5 @@
             <div></div>
         </div>
     </div>
-    <div class="search">
-        <form id="search-form">
-            <input class="text" type="text" placeholder="Что ищем?">
-            <input hidden type="submit" value="Найти">
-        </form>
-    </div>
+	<?php get_search_form(); ?>
 </header>
