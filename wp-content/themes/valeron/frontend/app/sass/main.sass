@@ -713,6 +713,69 @@ footer
 				background: transparent
 		li.slick-active button
 			background: #fff
+
+	.ofice-slider
+		padding: 0
+		position: static
+		.item
+			position: relative
+		.title
+			position: absolute
+			bottom: 0
+			right: 0
+			background: $sc
+			h2
+				display: block
+				height: 50px
+				margin: 0 20px
+				line-height: 50px
+				color: #fff
+	.ofice-cont
+		padding: 0
+		background: $sc
+		position: relative
+		.post-content
+			width: 100%
+			height: 100%
+			background: $sc
+			h1
+				color: $c
+		.act_buttons
+			position: absolute
+			right: 0
+			bottom: 33%
+			a
+				font-size: 16px
+				color: $c
+				display: block
+				border-radius: 5px 0 0 5px
+				width: 60px
+				height: 45px
+				position: absolute
+				right: 0
+				overflow: hidden
+				span
+					display: none
+					position: absolute
+					right: 35px
+					top: 11px
+					font-size: 16px
+					color: #fff
+				&:hover
+					width: 220px
+					background-size: 10%
+					background-position-x: 20px
+				&:hover span
+					display: inline
+			.modal_button
+				background: $c url("../img/phone.png") 50% 50% no-repeat
+				background-size: 30%
+				top: 0
+#post-main.apartaments
+	margin-top: 25px
+	margin-bottom: 25px
+	.slick-dots
+		z-index: 0
 .post-content
 	position: absolute
 	background: #FFFFFF
@@ -895,4 +958,75 @@ area[title]:hover:after
 			color: #16110E
 		p
 			font-size: 18px
+
+.modal
+	&-wrap
+		display: none
+		position: fixed
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		background: rgba(#000, 0.75)
+		text-align: center
+		transition: 0.3s ease
+		h2
+			font-weight: bold
+			font-size: 22px
+			color: #fff
+			text-transform: uppercase
+	&-cont
+		width: 33%
+		position: absolute
+		top: 50%
+		left: 50%
+		background: $sc
+		z-index: 10
+		transform: translate(-50%, -50%)
+		input[type="text"], textarea
+			display: block
+			width: 75%
+			margin: 15px auto
+			height: 45px
+			line-height: 45px
+			padding: 0 20px
+			color: #fff
+			font-size: 18px
+			font-weight: bold
+			background: $sc
+			border: 3px solid white
+			&:-moz-placeholder
+				color: #fff
+			&::-webkit-input-placeholder
+				color: #fff
+			&:-ms-input-placeholder
+				color: #fff
+			&:-moz-placeholder
+				color: #fff
+		textarea
+			height: 90px
+		input[type="submit"]
+			display: block
+			width: 40%
+			margin: 25px auto
+			background: $c
+			color: $sc
+			border: 0
+			height: 50px
+			line-height: 50px
+			font-size: 18px
+			font-weight: bold
+			&:hover
+				color: #ffffff
+	&-close
+		position: absolute
+		top: 15px
+		right: 25px
+		width: 35px
+		height: 35px
+		background: url("../img/icons/close.png") 50% 50% no-repeat
+		background-size: 85%
+		cursor: pointer
+.modal-wrap.active
+	display: block
 @import "media" // Всегда в конце

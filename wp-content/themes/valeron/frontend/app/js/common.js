@@ -196,6 +196,16 @@ $(function() {
     $('area').tooltipster({
         theme: 'tooltipster-borderless'
     });
+
+    /**
+     * modal button handler
+     */
+    $('.modal_button, .modal-close').on('click', function (e) {
+        e.preventDefault();
+       $('.modal-wrap').toggleClass('active');
+    });
+
+
 });
 
 /**
