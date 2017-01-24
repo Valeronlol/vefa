@@ -7,9 +7,15 @@
 @media only screen and (max-width : 1200px)
   header .nav .menu a
     font-size: rem(16)
+  .modal-cont
+    width: 50%
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
+  .modal-cont
+    width: 80%
+  #post-main .ofice-cont
+    height: 300px
   .page-about
     height: auto
   .page-about .logo_cont
@@ -81,7 +87,17 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-
+  .modal-cont
+    width: 98%
+  #post-main .ofice-cont
+    height: auto
+    margin-bottom: 25px
+    padding-bottom: 25px
+  #post-main .ofice-slider .title
+    top: 0
+    right: 50%
+    transform: translateX(50%)
+    bottom: auto
   .flex-nav #flex-menu .flexMenu-viewMore .flexMenu-popup
     margin: 0 15px
   header .filter h2
