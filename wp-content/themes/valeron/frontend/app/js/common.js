@@ -213,7 +213,22 @@ $(function() {
        $('.modal-wrap').toggleClass('active');
     });
 
+    /**
+     * ajax data send from modal window
+     */
 
+    $('#modal_form').on('submit', function(e){
+        e.preventDefault();
+        var data = {
+            action: 'email_action',
+            whatever: 999
+        };
+
+        // 'ajaxurl' не определена во фронте, поэтому мы добавили её аналог с помощью wp_localize_script()
+        jQuery.post( myajax.url, data, function(response) {
+            console.log('Получено с сервера: ' + response);
+        });
+    });
 });
 
 /**

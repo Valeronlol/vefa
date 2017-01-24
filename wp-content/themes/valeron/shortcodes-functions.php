@@ -36,4 +36,16 @@ add_shortcode('home_slider', function() {
 	return $html;
 });
 
+/**
+ * Ajax mail sender
+ */
+add_action('wp_ajax_email_action', 'email_callback');
+add_action('wp_ajax_nopriv_email_action', 'email_callback');
+function email_callback() {
+	$whatever = intval( $_POST['whatever'] );
+
+	echo $whatever + 10;
+
+	wp_die();
+}
 
