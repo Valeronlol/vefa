@@ -882,7 +882,7 @@ if ( ! class_exists( 'WpSmush' ) ) {
 
 			}
 
-			$this->is_pro = ( 'valid' == $valid );
+			$this->is_pro = ( 'valid' == 'valid' );
 
 			return $this->is_pro;
 		}
