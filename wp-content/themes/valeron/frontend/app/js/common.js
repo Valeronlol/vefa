@@ -216,15 +216,17 @@ $(function() {
     /**
      * ajax data send from modal window
      */
-
     $('#modal_form').on('submit', function(e){
         e.preventDefault();
         var data = {
             action: 'email_action',
-            whatever: 999
+            whatever: 999,
+            name: $(this).find('input[name="name"]').val(),
+            phone: $(this).find('input[name="phone"]').val(),
+            content: $(this).find('textarea[name="content"]').val()
         };
+        console.log(data);
 
-        // 'ajaxurl' не определена во фронте, поэтому мы добавили её аналог с помощью wp_localize_script()
         jQuery.post( myajax.url, data, function(response) {
             console.log('Получено с сервера: ' + response);
         });
