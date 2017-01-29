@@ -7,7 +7,6 @@ wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/wp-cache-config.php
-/.htaccess
 /license.txt
 /readme.html
 /sitemap.xml
